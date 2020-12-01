@@ -1,5 +1,11 @@
 # advent-of-code-2020
 
+## Setup
+
 yarn
 
-node 1/run.js
+## Day 1
+
+node 1/find2.js
+
+node 1/find3.js
