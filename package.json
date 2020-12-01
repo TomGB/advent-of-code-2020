@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "combinations": "^1.0.0",
+    "esm": "^3.2.25",
+    "js-combinatorics": "^1.4.5"
+  }
+}
