@@ -17,3 +17,9 @@ node 1/find3.js
 **Part 2 Faster**
 
 node 1/find3faster.js
+
+## Day 2
+
+**Part 1 and Part 2**
+
+node 2/run.js
