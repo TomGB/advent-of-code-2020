@@ -24,6 +24,7 @@ const countTrees = ([x, y]) => {
     return treeCount
 }
 
-const multiplied = slopes.map(countTrees).reduce((a, c) => a * c)
+const treeCounts = slopes.map(countTrees)
+const multiplied = treeCounts.reduce((a, c) => a * c)
 
-console.log({ multiplied })
+console.log({ partOne: treeCounts[1], partTwo: multiplied })
