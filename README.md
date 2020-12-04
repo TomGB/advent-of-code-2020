@@ -29,3 +29,9 @@ node 2/run.js
 **Part 1 and Part 2**
 
 node 3/run.js
+
+## Day 4
+
+**Part 1**
+
+node 3/run.js
