@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-const input = fs.readFileSync('2/input.txt', 'utf8').split('\n').filter(x => x)
+const input = fs.readFileSync(`${__dirname}/input.txt`, 'utf8').split('\n').filter(x => x)
 
 const passwords = input.map(line => {
     const [policy, password] = line.split(': ')

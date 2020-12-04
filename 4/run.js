@@ -1,8 +1,8 @@
 const fs = require('fs')
 
-const passportsText = fs.readFileSync('4/input.txt', 'utf8').split(`\n\n`)
+const input = fs.readFileSync(`${__dirname}/input.txt`, 'utf8')
 
-const passportEntries = passportsText.map(passport => {
+const passportEntries = input.split(`\n\n`).map(passport => {
     const entries = passport.split(/[\n\s]+/)
     return entries.map(entry => entry.split(':'))
 })
@@ -12,7 +12,7 @@ const heights = {
     in: h => h >= 59 && h <= 76,
 }
 
-const requiredFields = {
+const requiredFields = Object.entries({
     byr: v => v >= 1920 && v <= 2002,
     iyr: v => v >= 2010 && v <= 2020,
     eyr: v => v >= 2020 && v <= 2030,
@@ -24,16 +24,16 @@ const requiredFields = {
     hcl: v => /^#[0-9a-f]{6}$/i.test(v),
     ecl: v => 'amb blu brn gry grn hzl oth'.split(' ').includes(v),
     pid: v => /^\d{9}$/i.test(v),
-}
+})
 
 const partOne = passportEntries.filter(
-    passport => Object.entries(requiredFields).every(
-        ([key]) => passport.find(([entryKey, value]) => key === entryKey)
+    passport => requiredFields.every(
+        ([key]) => passport.find(([entryKey]) => key === entryKey)
     )
 ).length
 
 const partTwo = passportEntries.filter(
-    passport => Object.entries(requiredFields).every(
+    passport => requiredFields.every(
         ([key, check]) => passport.find(([entryKey, value]) => key === entryKey && check(value))
     )
 ).length
