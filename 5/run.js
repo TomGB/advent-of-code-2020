@@ -7,6 +7,6 @@ const partOne = Math.max(...seatPositions)
 
 seatPositions.sort((a, b) => a - b)
 
-const partTwo = seatPositions.find((pos, i, arr) => pos - arr[i + 1] === -2) + 1
+const partTwo = seatPositions.find((pos, i, arr) => arr[i + 1] - pos === 2) + 1
 
 console.log({ partOne, partTwo })
