@@ -1,13 +1,7 @@
 const fs = require('fs')
 const input = fs.readFileSync(`${__dirname}/input.txt`, 'utf8').split(`\n`).filter(x => x)
 
-const binToDec = (input, zero, one) => parseInt(input.replace(zero, 0).replace(one, 1), 2)
-
-const seatPositions = input.map(pass => {
-    const row = binToDec(pass.slice(0, 7), /F/g, /B/g)
-    const col = binToDec(pass.slice(7), /L/g, /R/g)
-    return row * 8 + col
-})
+const seatPositions = input.map(pass => parseInt(pass.replace(/F|L/g, 0).replace(/B|R/g, 1), 2))
 
 const partOne = Math.max(...seatPositions)
 
