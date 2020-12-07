@@ -6,24 +6,12 @@ module.exports = input => {
         return { outerBag, innerBags }
     })
 
-    const partOne = () => {
-        const possibleBags = new Set(['shiny gold'])
-
-        let previousSetSize = 1
-
-        do {
-            previousSetSize = possibleBags.size;
-            [...possibleBags].forEach(bagToFind => {
-                const containingBags = rules.filter(rule =>
-                    rule.innerBags.find(({ bag }) => bag === bagToFind)
-                )
-
-                containingBags.forEach(({ outerBag }) => possibleBags.add(outerBag))
-            })
-        } while (possibleBags.size !== previousSetSize)
-
-        return possibleBags.size - 1
-    }
+    const findParentBags = bagName =>
+        rules.filter(rule =>
+            rule.innerBags.find(({ bag }) => bag === bagName)
+        ).flatMap(({ outerBag }) =>
+            [outerBag, ...findParentBags(outerBag)]
+        )
 
     const countBags = (bagName) => {
         const { innerBags } = rules.find(({ outerBag }) => outerBag === bagName)
@@ -33,5 +21,8 @@ module.exports = input => {
             , 1)
     }
 
-    return { partOne: partOne(), partTwo: countBags('shiny gold') - 1 }
+    return {
+        partOne: new Set(findParentBags('shiny gold')).size,
+        partTwo: countBags('shiny gold') - 1
+    }
 }
