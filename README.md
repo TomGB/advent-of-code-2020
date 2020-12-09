@@ -28,3 +28,9 @@ Part 1 and Part 2 - `node 6/run.js`
 
 ### Day 7
 Part 1 and Part 2 - `node 7/run.js`
+
+### Day 8
+Part 1 and Part 2 - `node 8/run.js`
+
+### Day 9
+Part 1 and Part 2 - `node 9/run.js`
