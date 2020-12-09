@@ -50,6 +50,6 @@ const newPrograms = [
     ...jmps.map(modifyLine(originalProgram, 'nop')),
 ]
 
-const partTwo = newPrograms.map(program => runProgram(program)).find(({ state }) => state === 'end').acc
+const partTwo = newPrograms.map(runProgram).find(({ state }) => state === 'end').acc
 
 console.log({ partOne, partTwo })
