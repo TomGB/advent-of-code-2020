@@ -25,7 +25,7 @@ const neighborsOffset = [
 
 const match = (a, b) => JSON.stringify(a) === JSON.stringify(b)
 
-const partOne = grid => {
+const partTwo = grid => {
 
     const newGrid = Array.from({ length: grid.length }, () => [])
 
@@ -45,7 +45,7 @@ const partOne = grid => {
     // console.log('')
 
     if (match(grid, newGrid)) return newGrid.flatMap(x => x).filter(x => x === '#').length
-    else return partOne(newGrid)
+    else return partTwo(newGrid)
 }
 
-module.exports = partOne
+module.exports = partTwo
