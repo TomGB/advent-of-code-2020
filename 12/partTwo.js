@@ -1,17 +1,3 @@
-const rotateLeft = {
-    N: 'W',
-    W: 'S',
-    S: 'E',
-    E: 'N'
-}
-
-const rotateRight = {
-    N: 'E',
-    W: 'N',
-    S: 'W',
-    E: 'S'
-}
-
 const moveShip = {
     N: (x, y, sX, sY, num) => [x, y, sX, sY + num],
     S: (x, y, sX, sY, num) => [x, y, sX, sY - num],
@@ -34,20 +20,24 @@ const move = {
         return [x, y, sX, sY]
     },
     L: (x, y, sX, sY, num) => {
-        const oldX = x, oldY = y
+        let oldX = x, oldY = y
         do {
             x = -oldY
             y = oldX
             num -= 90
+            oldX = x
+            oldY = y
         } while (num > 0)
         return [x, y, sX, sY]
     },
     R: (x, y, sX, sY, num) => {
-        const oldX = x, oldY = y
+        let oldX = x, oldY = y
         do {
             x = oldY
             y = -oldX
             num -= 90
+            oldX = x
+            oldY = y
         } while (num > 0)
         return [x, y, sX, sY]
     },
