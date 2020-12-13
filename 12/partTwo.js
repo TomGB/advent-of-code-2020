@@ -53,7 +53,7 @@ const move = {
     },
 }
 
-const partOne = input => {
+const partTwo = input => {
     const path = input.map(line => line.match(/(?<dir>.)(?<num>\d+)/).groups).map(({ dir, num }) => ({ dir, num: parseInt(num) }))
 
     let x = 10
@@ -69,4 +69,4 @@ const partOne = input => {
     return Math.abs(sX) + Math.abs(sY)
 }
 
-module.exports = partOne
+module.exports = partTwo
