@@ -37,3 +37,15 @@ Part 1 and Part 2 - `node 09/run.js`
 
 ### Day 10
 Part 1 and Part 2 - `node 10/run.js`
+
+### Day 11
+Part 1 and Part 2 - `node 11/run.js`
+
+### Day 12
+Part 1 and Part 2 - `node 12/run.js`
+
+### Day 13
+Part 1 and Part 2 - `node 13/run.js`
+
+### Day 14
+Part 1 and Part 2 - `node 14/run.js`
