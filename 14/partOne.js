@@ -14,11 +14,9 @@ const partOne = input => {
         const orMask = replace(mask, /X|0/g, '0')
         const andMask = replace(mask, /X|1/g, '1')
 
-        mems.forEach(({ i, v }) => {
-            const input = BigInt(v)
-            const maskedValue = input | orMask & andMask
-            memory[i] = maskedValue
-        })
+        mems.forEach(({ i, v }) =>
+            memory[i] = BigInt(v) | orMask & andMask
+        )
     })
 
     return Object.values(memory).reduce((a, x) => a + x)
