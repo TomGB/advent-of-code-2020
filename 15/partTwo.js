@@ -1,5 +1,3 @@
-const cliProgress = require('cli-progress')
-
 const partTwo = input => {
     const series = input.split(',').map(x => parseInt(x))
 
