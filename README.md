@@ -52,3 +52,6 @@ Part 1 and Part 2 - `node 14/run.js`
 
 ### Day 15
 Part 1 and Part 2 - `node 15/run.js`
+
+### Day 16
+Part 1 and Part 2 - `node 16/run.js`
